@@ -23,7 +23,7 @@ async def btn_click(event) -> None:
     # 信号の送信に失敗した場合はボタンを失敗マークにする
     js.btn_failure()
     
-    if not btn.is_send_ok()():
+    if not btn.is_send_ok():
         ### 信号の送信に成功した確認する ###:
     
         ### ボタンを失敗マークにする ###
