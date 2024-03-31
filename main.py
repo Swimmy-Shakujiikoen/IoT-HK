@@ -32,7 +32,7 @@ async def btn_click(event) -> None:
 
     # IoT側が動作完了するまで10秒ごとに確認する
     js.btn_success()
-    while not await iot.has_triggered()  # 信号受け取り
+    while not await iot.has_triggered():  # 信号受け取り
         ### 10秒待つ ###
         await btn.sleep(10)
     ### ボタンを成功マークにする ###
