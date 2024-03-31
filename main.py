@@ -21,8 +21,6 @@ async def btn_click(event) -> None:
     await btn.send_trigger()
 
     # 信号の送信に失敗した場合はボタンを失敗マークにする
-    js.btn_failure()
-    
     if not btn.is_send_ok():
         ### 信号の送信に成功した確認する ###:
     
