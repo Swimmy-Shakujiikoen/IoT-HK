@@ -18,14 +18,22 @@ if not btn.is_ready():
 # ボタン発動時
 async def btn_click(event) -> None:
     ### IoTに信号を送る ###
+    await btn.send_trigger()
 
     # 信号の送信に失敗した場合はボタンを失敗マークにする
-    if not ### 信号の送信に成功した確認する ###:
+    js.btn_failure()
+    
+    if not btn.is_send_ok()():
+        ### 信号の送信に成功した確認する ###:
+    
         ### ボタンを失敗マークにする ###
+        js.btn_failure()
         return
 
     # IoT側が動作完了するまで10秒ごとに確認する
+    js.btn_success()
     while not await ### IoT側が動作完了したか確認する ###:
         ### 10秒待つ ###
-
+        await btn.sleep(10)
     ### ボタンを成功マークにする ###
+    js.btn_success()
